@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Map Api</title>
+        <link rel="icon" href="../map.png">
+        <link href="mapbox.css" type="text/css" rel="stylesheet"/>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    </head>
+
+    <body>
+        <div id="nav-bar">
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Map</li>
+                    <li>About Us</li>
+                </ul>
+            </nav>
+        </div>
+        <div id="content">
+            <h1>Welcome to Maps API</h1>
+            <p>This is my testing page for using Mapbox API</p>
+        </div>
+
+        <div id="map"></div>
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoidG9yeTI0IiwiYSI6ImNraHR5anZiajAzeGQyc3J2bG5ka3p1aXMifQ.u28pdNRwLuKtsnFRNhky3g';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [151.12543, -33.82803],
+                zoom: 11
+            });
+            map.addControl(new mapboxgl.NavigationControl());
+        </script>
+    </body>
+</html>
